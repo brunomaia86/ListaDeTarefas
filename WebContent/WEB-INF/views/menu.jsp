@@ -8,13 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>SGH - Logado no sistema</h2>
+	<h2>Página inicial da Lista de Tarefas</h2>
 	<p>Bem vindo, <b>${usuarioLogado.login}</b></p>
 	<a href="novoUsuario" class="link">Cadastro de cliente</a><br /><br >
 	<a href="listaTarefas" class="link">Lista de tarefas</a>
 	
 	<br /><br /><hr />
 	
-	<a href="logout" class="link"">Sair do sistema</a>
+	<a href="logout" class="link">Sair do sistema</a>
 </body>
 </html>
