@@ -19,7 +19,7 @@
 	<mvc:default-servlet-handler /><!-- Ignora conteúdo estático -->
 
 	<!-- Filtro para identificação no sistema -->
-	
+
 
 	<!-- Configuração do componente responsável pelo MVC -->
 	<context:component-scan base-package="br.com.caelum.tarefa.controller" /><!-- 
@@ -39,28 +39,20 @@
 		<property name="password" value="" />
 	</bean>
 
+	<mvc:interceptors>
+		<bean class="br.com.caelum.tarefa.interceptor.AutorizadorInterceptor" />
+	</mvc:interceptors>
+
 	<!-- gerenciamento de jpa pelo spring -->
-	<!-- 
-	
-	Não funfou nas configurações de conexão com Spring + JPA
-	
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="mysqlDataSource" />
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
-		</property>
-	</bean>
-	
-	 -->
+	<!-- Não funfou nas configurações de conexão com Spring + JPA <bean id="entityManagerFactory" 
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
+		<property name="dataSource" ref="mysqlDataSource" /> <property name="jpaVendorAdapter"> 
+		<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" 
+		/> </property> </bean> -->
 
 	<!-- gerenciamento da transação pelo spring -->
-	<!--
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-
-	-->
+	<!-- <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
+		<property name="entityManagerFactory" ref="entityManagerFactory" /> </bean> -->
 	<tx:annotation-driven />
 
 </beans>
